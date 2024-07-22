@@ -8,13 +8,26 @@ package campuserp;
  *
  * @author camper
  */
+import java.util.Scanner; 
+
 public class CampusERP {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        // Scanner permite obtener la entrada de datos
+        Scanner sn = new Scanner(System.in); 
+        boolean salir = false;
+        int opcion; //Opcion del usuario
+        
+        while)(!salir){
+        
+        
+        }
+        
+        
     }
     
 }
