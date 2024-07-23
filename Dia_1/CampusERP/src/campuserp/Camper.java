@@ -20,7 +20,7 @@ public class Camper {
     private String estado;
     private String riesgo;
     
-    //Constructor
+    //Constructor de los datos
     public Camper (int id,String nombres,String apellidos,String direccion,
      String acudiente,String celular,String fijo,String estado,String riesgo){
     
@@ -98,4 +98,21 @@ public class Camper {
         this.riesgo = riesgo;
     }
     
+    @Override
+    public String toString(){
+        return "Camper {" +
+                "Id = " + id + "|" +
+                "Nombres = " + nombres + "|" +
+                "Apellidos = " + apellidos + "|" +
+                "Direccion = " + direccion + "|" +
+                "Acudiente = " + acudiente + "|" +
+                "Celular = " + celular + "|" +
+                "Fijo = " + fijo + "|" +
+                "Estado = " + estado + "|" +
+                "Riesgo = " + riesgo + "|" +
+                "}";
+    
+    }
+    
 }
+

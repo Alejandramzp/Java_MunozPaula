@@ -37,21 +37,14 @@ public class CampusERP {
                 opcion = sn.nextInt(); //recibe el numero entero y lo compara 
             
                 switch (opcion){
-                    case 1: 
-                        System.out.println("\n --- Entraste a Coordinador --- \n ");
-                        break;
-                    case 2: 
-                        System.out.println(" \n --- Entraste a Trainer --- \n");
-                        break;    
-                    case 3: 
-                        System.out.println("\n --- Entraste a Camper --- \n");
-                        break;
-                    case 4: 
+                    case 1 -> System.out.println("\n --- Entraste a Coordinador --- \n ");
+                    case 2 -> System.out.println(" \n --- Entraste a Trainer --- \n");
+                    case 3 -> System.out.println("\n --- Entraste a Camper --- \n");
+                    case 4 -> { 
                         System.out.println("\n --- Saliendo --- \n");
                         salir = true;
-                        break;
-                    default:
-                        System.out.println("\n ---- Opción Incorrecta --- \n ");
+                    }
+                    default -> System.out.println("\n ---- Opción Incorrecta --- \n ");
                 }
             } catch (InputMismatchException e){
                 System.out.println("\n ---- Debes escribir números enteros --- \n");
