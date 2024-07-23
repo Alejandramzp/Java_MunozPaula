@@ -10,6 +10,7 @@ package campuserp;
  */
 import java.util.Scanner;
 import java.util.InputMismatchException;
+import campuserp.CamperCRUD;
 
 public class CampusERP {
 
@@ -17,6 +18,7 @@ public class CampusERP {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        CamperCRUD camperCRUD = new CamperCRUD();
         
         // Scanner permite obtener la entrada de datos
         Scanner sn = new Scanner(System.in); 
