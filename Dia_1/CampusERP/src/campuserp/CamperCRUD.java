@@ -24,34 +24,36 @@ public class CamperCRUD { //Declarar la lista y el scanner
     }
     
     public void createCamper(){ // Creacion de los datos del camper
-        Camper camper = new Camper();
-        System.out.print("Ingrese el ID: ");
-        camper.setId(scanner.nextInt());
-        System.out.print("Ingrese los nombres: ");
-        camper.setNombres(scanner.nextLine());
-        System.out.print("Ingrese los apellidos: ");
-        camper.setApellidos(scanner.nextLine());
-        System.out.print("Ingrese la direccion: ");
-        camper.setDireccion(scanner.nextLine());
-        System.out.print("Ingrese el acudiente: ");
-        camper.setAcudiente(scanner.nextLine());
-        System.out.print("Ingrese el número de celular: ");
-        camper.setCelular(scanner.nextLine());
-        System.out.print("Ingrese el número fijo: ");
-        camper.setFijo(scanner.nextLine());
-        System.out.print("Ingrese el estado (Aprobado o Reprobado): ");
-        camper.setEstado(scanner.nextLine());
-        System.out.print("Ingrese el riesgo (Bajo o Alto): ");
-        camper.setRiesgo(scanner.nextLine());
         
+        System.out.print("\n Ingrese el ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Ingrese los nombres: ");
+        String nombres = scanner.nextLine();
+        System.out.print("Ingrese los apellidos: ");
+        String apellidos = scanner.nextLine();
+        System.out.print("Ingrese la direccion: ");
+        String direccion = scanner.nextLine();
+        System.out.print("Ingrese el acudiente: ");
+        String acudiente = scanner.nextLine();
+        System.out.print("Ingrese el número de celular: ");
+        String celular = scanner.nextLine();
+        System.out.print("Ingrese el número fijo: ");
+        String fijo = scanner.nextLine();
+        System.out.print("Ingrese el estado (Aprobado o Reprobado): ");
+        String estado = scanner.nextLine();
+        System.out.print("Ingrese el riesgo (Bajo o Alto): ");
+        String riesgo = scanner.nextLine();
+        
+        Camper camper = new Camper(id, nombres,apellidos,direccion,acudiente,celular,fijo,estado,riesgo);
         campers.add(camper);
-        System.out.println("\nEl proceso de creación de camper fue exitoso:\n");
+        System.out.println("\nEl proceso de creación de camper fue exitoso.");
     
     }
    
     public void readCamper(){ // leer los datos del camper
         if(campers.isEmpty()){
-            System.out.println("\n No hay campers registrados. \n");
+            System.out.println("\n No hay campers registrados.");
         } else {
             for (Camper camper : campers){
             System.out.println(camper);
@@ -69,8 +71,9 @@ public class CamperCRUD { //Declarar la lista y el scanner
     }    
     
     public void updateCamper(){
-        System.out.print("Ingrese el ID del camper a actualizar: ");
+        System.out.print("\n Ingrese el ID del camper a actualizar: ");
         int id = scanner.nextInt();
+        scanner.nextLine();
         Camper camper = findCamperById(id);
         
         if(camper == null){
