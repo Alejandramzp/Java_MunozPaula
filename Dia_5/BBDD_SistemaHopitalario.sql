@@ -5,8 +5,7 @@
 -- | |_) || |_) || |__| || |__| |
 -- |____/ |____/ |_____/ |_____/ 
  
-CREATE DATABASE sistema_hospitalario;
-USE sistema_hospitalario;
+USE bizpdarpe0g2ttcjyaok;
 
 CREATE TABLE hospital (
 	id INT AUTO_INCREMENT PRIMARY KEY,
