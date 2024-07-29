@@ -15,6 +15,9 @@ public class SistemaHospitalario {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        Conexion cone = new Conexion();
+        cone.Conexion();
     }
     
 }
