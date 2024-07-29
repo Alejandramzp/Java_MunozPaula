@@ -59,6 +59,14 @@ CREATE TABLE paciente (
 
 SHOW TABLES;
 
-INSERT INTO hospital (H_nombre,H_direccion) VALUES ("Hospital Universitario","Calle 15B # 17-25");
+-- Insertar datos
+INSERT INTO hospital (H_nombre,H_direccion) VALUES ('Hospital Universitario','Calle 15B # 17-25');
 
+-- Mostrar datos
 SELECT * FROM hospital;
+
+-- Actualizar datos
+UPDATE hospital SET hospital.H_nombre = 'Hospital La Foscal', hospital.H_direccion = 'Cra 25A # 22-16' WHERE hospital.id = 1;
+
+-- Elimiar datos
+DELETE FROM hospital WHERE hospital.id = 2;
