@@ -8,7 +8,7 @@ package baloncesto;
  *
  * @author Admin
  */
-public abstract class Partido {
+public class Partido {
     
     protected String equipoLocal;
     protected String equipoVisitante;
@@ -29,11 +29,44 @@ public abstract class Partido {
         this.fecha = fecha;
     }
 
-    public abstract void puntosLocal(int puntos);
-    public abstract void puntosVisitante(int puntos);
-     
-    // public abstract String Ganador();
+    public void puntosLocal(int puntos){}
+    public void puntosVisitante(int puntos){}
     
+    public void Ganador() {
+        if (finalizado == true){
+          if (cestasLocal > cestasVisitante) {
+            System.out.println("El ganador del encuentro es: " + equipoLocal);
+          } else if (cestasVisitante > cestasLocal) {
+            System.out.println("El ganador del encuentro es: " + equipoVisitante);  
+            }    
+        }else{
+            System.out.println("El partido no ha finalizado");
+        }
+    }
+    
+    public void FinalizarEncuentro(){
+        if(finalizado == true){
+            System.out.println("El partido ya se ha finalizado");
+        }else{
+            if(cestasLocal != cestasVisitante){
+                System.out.println("El partido se ha finalizado exitosamente");
+            }else{
+                System.out.println("No es posible finalizar el partido hasta que haya un ganador");
+            }
+        }  
+    }
+    
+    public void InfoPartido(){
+        System.out.println("Fecha del partido: " + fecha);
+        if(finalizado == true){
+            System.out.println("El partido ya se terminó");
+        }else{
+            System.out.println("El partido no ha terminado");
+        }
+        System.out.println("Equipo local: " + equipoLocal + "| Cestas: " + cestasLocal);
+        System.out.println("Equipo Visitante: " + equipoVisitante + "| Cestas: " + cestasVisitante);
+    }
+     
     public String getEquipoLocal() {
         return equipoLocal;
     }
@@ -75,5 +108,5 @@ public abstract class Partido {
     public void setFinalizado(boolean finalizado) {
         this.finalizado = finalizado;
     }
-  
+    
 }

@@ -23,23 +23,13 @@ public class Playoffs extends Partido {
         this.ronda = ronda;
     }
     
-    public String obtenerGanador() {
-        if (cestasLocal > cestasVisitante) {
-            return equipoLocal;
-        } else if (cestasVisitante > cestasLocal) {
-            return equipoVisitante;
-        } else {
-            return "Empate";
-        }
-    }
-  
     @Override
     public void puntosLocal(int puntos) {
-        System.out.println("Puntos Local");
+        this.cestasLocal = puntos;         
     }
 
     @Override
     public void puntosVisitante(int puntos) {
-         System.out.println("Puntos Visitante");
+        this.cestasVisitante = puntos;
     }
 }
