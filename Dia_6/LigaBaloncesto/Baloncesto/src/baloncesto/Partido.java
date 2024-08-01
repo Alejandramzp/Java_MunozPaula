@@ -33,6 +33,7 @@ public class Partido {
     public void puntosVisitante(int puntos){}
     
     public void Ganador() {
+        System.out.println("--.--.--.--.--.--.--.--.--.--");
         if (finalizado == true){
           if (cestasLocal > cestasVisitante) {
             System.out.println("El ganador del encuentro es: " + equipoLocal);
@@ -42,9 +43,11 @@ public class Partido {
         }else{
             System.out.println("El partido no ha finalizado");
         }
+        System.out.println("--.--.--.--.--.--.--.--.--.--");
     }
     
     public void FinalizarEncuentro(){
+        System.out.println("--.--.--.--.--.--.--.--.--.--");
         if(finalizado == true){
             System.out.println("El partido ya se ha finalizado");
         }else{
@@ -54,17 +57,32 @@ public class Partido {
                 System.out.println("No es posible finalizar el partido hasta que haya un ganador");
             }
         }  
+        System.out.println("--.--.--.--.--.--.--.--.--.--");
     }
     
     public void InfoPartido(){
+        System.out.println("--.--.--.--.--.--.--.--.--.--");
         System.out.println("Fecha del partido: " + fecha);
         if(finalizado == true){
-            System.out.println("El partido ya se terminó");
+            System.out.println("-- El partido ya se terminó --");
         }else{
             System.out.println("El partido no ha terminado");
         }
-        System.out.println("Equipo local: " + equipoLocal + "| Cestas: " + cestasLocal);
-        System.out.println("Equipo Visitante: " + equipoVisitante + "| Cestas: " + cestasVisitante);
+        System.out.println("Equipo local: " + equipoLocal + " | Cestas: " + cestasLocal);
+        System.out.println("Equipo Visitante: " + equipoVisitante + " | Cestas: " + cestasVisitante);
+        System.out.println("--.--.--.--.--.--.--.--.--.--");
+    }
+    
+    public void Resultados(){
+        System.out.println("--.--.--.--.--.--.--.--.--.--");
+        if(finalizado == true){
+            System.out.println("Resultados: ");
+            System.out.println("Equipo local: " + equipoLocal + "| Cestas: " + cestasLocal);
+            System.out.println("Equipo Visitante: " + equipoVisitante + "| Cestas: " + cestasVisitante);
+        }else{
+            System.out.println("No disponible, el partido no ha terminado");
+        }
+        System.out.println("--.--.--.--.--.--.--.--.--.--");
     }
      
     public String getEquipoLocal() {

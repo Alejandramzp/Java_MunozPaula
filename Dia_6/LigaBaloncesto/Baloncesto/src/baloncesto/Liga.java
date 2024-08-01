@@ -22,7 +22,7 @@ public class Liga extends Partido {
     public void setJornada(int jornada) {
         this.jornada = jornada;
     }
-
+    
     @Override
     public void puntosLocal(int puntos) {
         this.cestasLocal = puntos;         
