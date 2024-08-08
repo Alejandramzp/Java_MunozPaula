@@ -11,9 +11,9 @@ Estos principios se llamaron S.O.L.I.D. por sus siglas en inglés:
     
 Aplicar estos principios facilitará el trabajo y proporcionará algunas ventajas:
 
-    - Crear un software eficaz: que cumpla con su cometido y que sea robusto y estable.
-    - Escribir un código limpio y flexible ante los cambios: que se pueda modificar fácilmente según necesidad, que sea reutilizable y mantenible.
-    - Permitir escalabilidad: que acepte ser ampliado con nuevas funcionalidades de manera ágil.
+- Crear un software eficaz: que cumpla con su cometido y que sea robusto y estable.
+- Escribir un código limpio y flexible ante los cambios: que se pueda modificar fácilmente según necesidad, que sea reutilizable y mantenible.
+- Permitir escalabilidad: que acepte ser ampliado con nuevas funcionalidades de manera ágil.
     
 ## Single Responsibility Principle (SRP)
 
@@ -34,7 +34,7 @@ La manera de resolver este problema es que la clase superhéroe tenga una sola f
 
 Ejemplo de clase Coche:
 
-```
+```java
 class Coche {  
     String marca;
 
@@ -49,7 +49,7 @@ Como podemos observar, la clase Coche permite tanto el acceso a las propiedades 
 
 Para evitar esto, debemos separar las responsabilidades de la clase, por lo que podemos crear otra clase que se encargue de las operaciones a la BBDD:
 
-```
+```java
 class Coche {  
     String marca;
 
@@ -83,7 +83,7 @@ La forma correcta sería tener una interfaz superhabilidad y diferentes clases p
 
 Ejemplo de clase Coche:
 
-```
+```java
 class Coche {  
     String marca;
 
@@ -94,7 +94,7 @@ class Coche {
 ```
 Si quisiéramos iterar a través de una lista de coches e imprimir sus marcas por pantalla:
 
-```
+```java
 public static void main(String[] args) {  
     Coche[] arrayCoches = {
             new Coche("Renault"),
@@ -114,7 +114,7 @@ Esto no cumpliría el principio abierto/cerrado, ya que si decidimos añadir un 
 
 Para que cumpla con este principio podríamos hacer lo siguiente:
 
-```
+```java
 abstract class Coche {  
     // ...
     abstract int precioMedioCoche();
@@ -176,7 +176,7 @@ Esto quiere decir que debemos evitar agregar restricciones o cambiar el comporta
 
 Ejemplo de Coches:
 
-```
+```java
 Coche[] arrayCoches = {  
         new Renault(),
         new Audi(),
@@ -202,7 +202,7 @@ Esto no cumple con el principio de substitución de Liskov ni con el de abierto/
 
 Para que este método cumpla con el principio, la clase Coche debe definir el nuevo método:
 
-```
+```java
 abstract class Coche {
 
     // ...
@@ -212,7 +212,7 @@ abstract class Coche {
 
 Y las subclases deben implementar dicho método:
 
-```
+```java
 class Renault extends Coche {
 
     // ...
@@ -224,7 +224,7 @@ class Renault extends Coche {
 ```
 Ahora volvemos a implementar el método anterior, simplemente llama al método numAsientos() de la superclase donde el parámetro es de tipo coche.
 
-```
+```java
 public static void imprimirNumAsientos(Coche[] arrayCoches){  
         for (Coche coche : arrayCoches) {
             System.out.println(coche.numAsientos());
@@ -262,7 +262,7 @@ Ejemplo de clases de aves:
 
 Queremos definir las clases necesarias para albergar algunos tipos de aves como loros y tucanes.Pero ahora queremos añadir a los pingüinos. Estos son aves, pero además tienen la habilidad de nadar.
 
-```
+```java
 interface IAve {  
     void volar();
     void comer();
@@ -310,7 +310,7 @@ El problema es que el loro no nada, y el pingüino no vuela, por lo que tendría
 
 Lo más correcto sería separar más las interfaces, tanto como sea necesario. En este caso podríamos hacer lo siguiente:
 
-```
+```java
 interface IAve {  
     void comer();
 }
@@ -372,7 +372,7 @@ Ejemplo de acceso a datos:
 
 Supongamos que tenemos una clase para realizar el acceso a datos, y lo hacemos a través de una BBDD:
 
-```
+```java
 class DatabaseService{  
     //...
     void getDatos(){ //... }
@@ -396,7 +396,7 @@ En el futuro queremos cambiar el servicio de BBDD por un servicio que conecta co
 
 Para arreglar esto, podemos hacer que el módulo AccesoADatos dependa de una abstracción más genérica:
 
-```
+```java
 interface Conexion {  
     Dato getDatos();
     void setDatos();
@@ -419,7 +419,7 @@ Así, sin importar el tipo de conexión que se le pase al módulo AccesoADatos, 
 
 Ahora, cada servicio que queramos pasar a AccesoADatos deberá implementar la interfaz Conexion:
 
-```
+```java
 class DatabaseService implements Conexion {
 
     @Override
